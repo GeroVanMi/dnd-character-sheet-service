@@ -3,5 +3,11 @@ services:
   app:
     build: .
     container_name: dnd-character-sheet-service
-#  database:
-#    image:
+  database:
+    image: mongo:4.0-xenial
+    container_name: character-sheet-db
+    volumes:
+      - character-sheet-db:/data/db
+
+volumes:
+  character-sheet-db:
